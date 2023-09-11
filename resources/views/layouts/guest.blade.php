@@ -49,7 +49,6 @@
               <div class="collapse navbar-collapse" id="navbar-collapse">
                   <ul class="menu navbar-nav ml-auto">
                     <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                      <li class="nav-item"><a href="{{route('categories')}}" class="nav-link">Category</a></li>
                       <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>
                       <li class="nav-item"><a href="{{route('contact-us')}}" class="nav-link">Contact</a></li>
                   </ul>
@@ -87,19 +86,7 @@
 
 <!--footer start-->
 <footer class="footer-section bg-grey">
-    <div class="instagram-photo-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h4 class="text-center">Follow in Instagram</h4>
-            </div>
-        </div>
 
-        <div class="row no-gutters" id="instafeed">
-				
-          </div>
-        </div>
-    </div>
 </div>
 
     <div class="container">

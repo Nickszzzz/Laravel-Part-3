@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\VisitorsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +16,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [VisitorsController::class, 'index']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/single-blog', function() {
-    return view('single-blog');
-})->name('single-blog');
+Route::get('/single-blog/{id}', [VisitorsController::class, 'singleBlog'])->name('single-blog');
 Route::get('/contact-us', function() {
     return view('contact-us');
 })->name('contact-us');
 Route::get('/about', function() {
     return view('about');
 })->name('about');
-Route::get('/categories', function() {
+
+Route::get('/categories-ui', function() {
     return view('categories');
-})->name('categories');
+})->name('categories-ui');
+
+Route::post('/upload', [ImageUploadController::class, 'upload']);
+
+Route::middleware(['auth'])->group(function() {
+    Route::resource('posts', PostsController::class);
+});
