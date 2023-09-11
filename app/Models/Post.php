@@ -12,16 +12,10 @@ class Post extends Model
     public $table = 'posts';
 
     protected $fillable = [
-        'title',
-        'thumbnail',
-        'excerpt',
-        'content',
-        'slug',
-        'published_at',
-        'user_id'
+         //code here
     ];
 
     public function user() {
-        return $this->belongsTo(User::class);
+        //code here
     }
 }

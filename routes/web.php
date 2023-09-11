@@ -36,5 +36,5 @@ Route::get('/categories-ui', function() {
 Route::post('/upload', [ImageUploadController::class, 'upload']);
 
 Route::middleware(['auth'])->group(function() {
-    Route::resource('posts', PostsController::class);
+    //code here
 });
